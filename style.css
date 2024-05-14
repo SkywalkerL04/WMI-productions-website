@@ -1,0 +1,364 @@
+body {
+    font-family: fantasy;
+    margin: 0;
+    padding: 0;
+    width: 98.4vw;
+    min-height: 99.9vh; 
+    position: relative;
+    display: grid;
+    grid-template-rows: 10vh 80vh 20vh;
+    grid-template-columns: 100vw;
+    grid-template: 
+        "header"
+        "main"
+        "footer"
+        ;
+}
+
+header, footer {
+    background: linear-gradient(to right, #c78c16, #e5cd76);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%; 
+    position: absolute;
+}
+
+header {
+    display: grid;
+    grid-area: header;
+    top: 0; 
+    position: fixed;
+    border-bottom: 2px solid #a77613;
+    font-size: 200%;
+}
+
+.profilkep {
+    width: 5vw;
+    position: relative;
+    border-radius: 50%;
+    transition: transform 0.5s ease-in-out; 
+}
+
+.profilkep:hover {
+    transform: rotate(360deg);
+}
+
+.profilkepdiv {
+    float: left;
+    margin-left: 6vw;
+}                
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+a {
+    color: white;
+}
+
+sup {
+    font-size: x-small;
+}
+
+main {
+    display: grid;
+    grid-area: main;
+    margin-bottom: 5%;
+    margin-left: 3%;
+    color: #9d6900;
+}
+
+h1{
+    margin-top: 20vh;
+    text-align: center;
+}
+
+.introh1 {
+    margin-top: 10vh;
+    text-align: center;
+}
+
+.customsmain {
+    margin-bottom: 20vh;
+}
+
+.natphotosmain {
+    margin-bottom: 35vh;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 80vw 20vw;
+    grid-template: "bal jobb";
+    grid-area: footer;
+    bottom: 0;
+    border-top: 2px solid #a77613;
+    position: fixed;
+    width: 100%; 
+    left: 0;
+}
+
+
+.contacts {
+    margin-right: 5%;
+}
+
+.message {
+    display: grid;
+    grid-area: jobb;
+    text-align: center;
+    margin-right: 5%;
+}
+
+.messageszoveg {
+    height: 10vh;
+    background-image: url(./img/envelope\ 0hatter.png);
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.footerlink {
+    margin-right: 8%;
+    text-decoration: italic;
+}
+
+.footerbal {
+    display: grid;
+    grid-area: bal;
+    word-spacing: 200%;
+}
+
+.sendbutton {
+    font-family: fantasy;
+    color: #9d6900;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+/* MOC */
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3%;
+    margin-bottom: 25vh;
+    margin-top: 5vh;
+}
+
+.moclink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; 
+    position: relative;
+}
+
+.moclink img {
+    max-width: 90%;
+}  
+
+.moclink::after {
+    content: attr(data-text);
+    font-size: 150%;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.moclink:hover::after {
+    opacity: 1;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 6%;
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none;
+}
+
+/* CUSTOMS */
+
+.customs {
+    margin-bottom: 30px;
+}
+
+.customs h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+/* NATPHOTOS */
+
+.natphotolink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Removes the default underline */
+    position: relative; /* Needed for absolute positioning of text */
+}
+
+.natphotolink img {
+    max-width: 90%; /* Ensures the image does not exceed its container */
+}
+
+.natphotolink::after {
+    content: attr(data-text);
+    font-size: 150%;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust the transparency here */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.natphotolink:hover::after {
+    opacity: 1;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 6%;
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none; /* Ensures the text doesn't interfere with hover */
+}
+.moclink, .natphotolink, .customsphoto {
+    box-shadow: 0px 15px 10px grey;
+}
+/* RESPONSIVITY */
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+    header {
+        font-size: 150%; /* Adjust font size for smaller screens */
+    }
+    .profilkep {
+        width: 10vw; /* Adjust profile picture size for smaller screens */
+    }
+    .profilkepdiv {
+        margin-left: 2vw; /* Adjust margin for smaller screens */
+    }
+    .menu-items {
+        display: none; /* Hide regular menu on small screens */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to right, #c78c16, #e5cd76);
+        padding: 0;
+        margin: 0;
+    }
+    .menu-items.show {
+        display: block;
+    }
+    .menu-items li {
+        display: block;
+        margin-right: 0; /* Remove margin between menu items */
+        text-align:    center;
+    }
+    .menu-items li a {
+        display: block;
+        padding: 5px;
+        color: #fff;
+        text-decoration: none;
+    }
+    /* Hide hamburger icon for screens larger than phone view */
+    .menu-icon {
+        display: block; /* Show hamburger icon on small screens */
+        position: absolute;
+        top: 50%; /* Position from the middle */
+        transform: translateY(-50%); /* Center vertically */
+        right: 15vw; /* Adjust margin to 15vw */
+    }
+    /* Show regular menu items when menu icon is clicked */
+    .menu-icon.active + .menu-items {
+        display: block;
+    }
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    main {
+        margin-bottom: 10vh; /* Increase bottom margin for smaller screens */
+        padding-bottom: 10vh; /* Increase padding for smaller screens */
+    }
+    h1 {
+        margin-top: 20vh;
+    }
+    /* MOC */
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .moclink img {
+        max-width: 100%; /* Ensures the image does not exceed its container */
+    }    
+}
+
+/* Hide hamburger icon for screens larger than phone view */
+@media screen and (min-width: 769px) {
+    .menu-icon {
+        display: none;
+    }
+}
+@media screen and (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 30vh;
+        padding-bottom: 30vh;
+    }
+}
+/* CUSTOMS, NATPHOTOS*/
+@media screen and (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* FOOTER */
+
